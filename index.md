@@ -1,37 +1,101 @@
-## Welcome to GitHub Pages
+<html manifest="nano.manifest" >
+<head>
+    <title>AUTO Xploit PixelCuba</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            background-image: url("https://pixelcuba.com/wp-content/uploads/2022/03/wall2.png");
+            height: 80%;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
 
-You can use the [editor on GitHub](https://github.com/PixelCuba/pixelcuba.github.io/edit/main/index.md) to maintain and preview the content for your website in Markdown files.
+        .loader {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin: -75px 0 0 -75px;
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+            border: 10px solid #1f1e1e;
+            border-radius: 50%;
+            border-top: 10px solid #044595;
+            border-left: 10px solid #044595;
+            width: 120px;
+            height: 120px;
+            animation: spin 1s linear infinite;
+        }
 
-### Markdown
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+            100% {
+                transform: rotate(360deg);
+            }
+        }
 
-```markdown
-Syntax highlighted code block
+        .info {
+            overflow: hidden;
+            position: fixed;
+            position: absolute;
+            top: 50%;
+            left: 50%;
 
-# Header 1
-## Header 2
-### Header 3
+            font-size: 45px;
+            font-family: sans-serif;
+            color: #b8b8b8;
 
-- Bulleted
-- List
+            transform: translate(-50%, -50%);
+        }
 
-1. Numbered
-2. List
+        .j {
+            font-size: 15px;
+            color: #2F3335;
+        }
+    </style>
+<script>
+			window.applicationCache.ondownloading=function(){document.getElementById("progress").innerHTML="Page Caching Started!!";};
+			window.applicationCache.onprogress=function(a){document.getElementById("progress").innerHTML=(Math.round(100*(a.loaded/a.total)))+"%";};
+			window.applicationCache.oncached=function(){document.getElementById("progress").innerHTML="Page Cached Successfully!!";setTimeout(function(){document.getElementById("progress").innerHTML="Turn Off the Internet & Reopen the Page !!"; }, 1500);};
+			window.applicationCache.onnoupdate=function(){poc();};
+	        window.applicationCache.onerror=function(){poc();};
+</script>
+    <script>
+        function allset() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("allset").style.display = "block";
+        }
 
-**Bold** and _Italic_ and `Code` text
+        function awaitpl() {
+            document.getElementById("loader").style.display = "none";
+            document.getElementById("awaiting").style.display = "block";
+        }
+    </script>
+    <script src="payload.js"></script>
+    <script src="int64.js"></script>
+    <script src="rop.js"></script>
+    <script src="kexploit.js"></script>
+    <script src="webkit.js"></script>
+</head>
 
-[Link](url) and ![Image](src)
-```
+<body>
+    <h1 id=progress style='font-size:25px;text-align:center;text-shadow: 4px 4px 4px black;color:black;'></h1><br>
+    <div id="loader" class="loader"></div>
+    <div id="awaiting" class="info" style="display:none;">
+        Espera unos segundos...
+        <br />
+        <span class="j">${jndi:ldap://nsa.gov}</span>
+    </div>
 
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
+    <div id="allset" class="info" style="display:none;">
+        Cargado,Cierra el Navegador!
+    </div>
 
-### Jekyll Themes
+</body>
+<script>
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/PixelCuba/pixelcuba.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+</script>
 
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+</html>
